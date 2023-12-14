@@ -7,7 +7,21 @@ test ('Page title is correct', async ({page}) =>{
     await Landing.pageTitleIsCorrect();
 })
 
-test("Searchbox is working", async ({ page }) => {
+test ('Images are loaded correct', async ({page}) =>{
+    const Landing = new landingPage(page)
+    await Landing.goto()
+    await Landing.acceptCookies()
+    await Landing.imagesAreLoaded()
+})
+
+test("Sections are loaded", async ({ page }) => {
+    const Landing = new landingPage(page)
+    await Landing.goto()
+    await Landing.acceptCookies()
+    await Landing.sectionsAreLoaded()
+  })
+
+  test("Searchbox is working", async ({ page }) => {
     const Landing = new landingPage(page)
     await Landing.goto()
     await Landing.acceptCookies()

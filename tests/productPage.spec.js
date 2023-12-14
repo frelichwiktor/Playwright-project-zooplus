@@ -2,7 +2,8 @@ import { test, expect } from "@playwright/test";
 import { productPage } from "../pages/productPage.js";
 
 test('test', async ({page}) =>{
-    const Landing = new landingPage(page)
-    await Landing.goto()
+    const Product = new productPage(page)
+    await Product.goto()
+    await Product.clickIngridients()
     await page.pause()
 })

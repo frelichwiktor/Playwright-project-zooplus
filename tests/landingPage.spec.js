@@ -11,14 +11,14 @@ test ('Images are loaded correct', async ({page}) =>{
     const Landing = new landingPage(page)
     await Landing.goto()
     await Landing.acceptCookies()
-    await Landing.imagesAreLoaded()
+    await Landing.imagesAreLoadedAndVisible()
 })
 
-test("Sections are loaded", async ({ page }) => {
+test("Sections are visible", async ({ page }) => {
     const Landing = new landingPage(page)
     await Landing.goto()
     await Landing.acceptCookies()
-    await Landing.sectionsAreLoaded()
+    await Landing.sectionsAreLoadedAndVisible()
   })
 
   test("Searchbox is working", async ({ page }) => {

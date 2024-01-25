@@ -4,6 +4,9 @@ exports.landingPage = class landingPage {
 
   constructor(page) {
     this.page = page;
+    this.brandlogo_image = page.locator('#srh-logo')
+    this.leftbackground_image = page.locator('[class="BackgroundBanner-module_leftImage__GFWBA"]')
+    this.rightbackground_image = page.locator ('[class="BackgroundBanner-module_rightImage__r5yBK"]')
     this.searchbox_textbox = page.locator('#search_query_field_desktop')
     this.searchbox_button = page.locator('[type="submit"][data-zta="search_form_button_desktop"]')
     this.checkout_button = page.locator('[data-testid="MiniCartLink"]')
@@ -19,12 +22,9 @@ exports.landingPage = class landingPage {
     this.purchasedetails_section = page.locator('[class="PurchaseDetails-module_paymentShippingAndTrust__0p7i3"]')
     this.socialandapps_section = page.locator('[class="SocialAndApps-module_socialAndApps__OLYLe"]')
     this.legallinks_section = page.locator('[class="LegalLinks-module_legalLinks__5Jdza"]')
-    this.brandlogo_image = page.locator('#srh-logo')
-    this.leftbackground_image = page.locator('[class="BackgroundBanner-module_leftImage__GFWBA"]')
-    this.rightbackground_image = page.locator ('[class="BackgroundBanner-module_rightImage__r5yBK"]')
   }
 
-  async goto() {
+  async goToPage() {
     await this.page.goto("https://www.zooplus.pl/")
   }
 
@@ -37,22 +37,50 @@ exports.landingPage = class landingPage {
     await expect(this.page).toHaveTitle('Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus')
   }
 
-  async imagesAreLoadedAndVisible(){
+
+  async brandLogoImageIsVisible(){
     await expect(this.brandlogo_image).toBeVisible
+  }
+
+  async backgroundImagesAreVisible(){
     await expect(this.leftbackground_image).toBeVisible
     await expect(this.rightbackground_image).toBeVisible
   }
 
-  async sectionsAreLoadedAndVisible(){
-    await expect(this.sale_section).toBeVisible
+  async headerModuleIsVisible(){
     await expect(this.header_module).toBeVisible
-    await expect(this.newsletter_section).toBeVisible
-    await expect(this.recommendation_section).toBeVisible
-    await expect(this.sidebanner_section).toBeVisible
-    await expect(this.infolist_section).toBeVisible
-    await expect(this.purchasedetails_section).toBeVisible
+  }
+
+  async saleSectionIsVisible(){
+    await expect(this.sale_section).toBeVisible
+  }
+
+  async recommendationSectionIsVisible(){
+    await expect (this.recommendation_section).toBeVisible
+  }
+
+  async sidebannerSectionIsVisible(){
+    await expect (this.sidebanner_section).toBeVisible
+  }
+
+  async newsletterSectionIsVisible(){
+    await expect (this.newsletter_section).toBeVisible
+  }
+
+  async infolistSectionIsVisible(){
+    await expect (this.infolist_section).toBeVisible
+  }
+
+  async socialAndAppSectionIsVisible(){
     await expect(this.socialandapps_section).toBeVisible
-    await expect(this.legallinks_section).toBeVisible
+  }
+
+  async purchaseDetailsSectionIsVisible(){
+    await expect (this.purchasedetails_section).toBeVisible
+  }
+
+  async legalLinkSectionIsVisible(){
+    await expect (this.legallinks_section).toBeVisible
   }
 
   async searchboxFill(product) {

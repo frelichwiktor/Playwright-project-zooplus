@@ -1,9 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { landingPage } from "../pages/landingPage.js";
 
-test.beforeEach('Setup', async ({page}) => {
+test.beforeEach('Setup - entering a page and accepting a cookies before every test', async ({page}) => {
   const Landing = new landingPage(page)
-  console.log('Entering a page and accepting a cookies before every test');
   await Landing.goToPage()
   await Landing.acceptCookies()
 });

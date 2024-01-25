@@ -41,6 +41,7 @@ test ('Register form is visible', async ({page}) =>{
     await Login.switchToRegisterForm();
 })
 
+//with every single test u have to change an email
 test ('Register a new customer', async ({page}) =>{
     const Login = new loginPage(page)
     await Login.switchToRegisterForm();

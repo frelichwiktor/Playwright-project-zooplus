@@ -21,6 +21,6 @@ Add the product to the cart and verify the cart content.
 Navigate to the login page.
 Input valid credentials and verify successful login.
 Test the "Forgot Password" functionality.
-## 4. End-to-End Shopping Process
+## TO DO: 4. End-to-End Shopping Process
 Perform a complete end-to-end shopping process, from product selection to order placement.
 Validate the order confirmation and check for order status.

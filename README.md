@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains automated tests for the Zooplus website using Playwright, a Node library for browser automation. The tests cover essential scenarios, including:
+This project contains automated tests for the Zooplus website using Playwright and Javascript. The tests cover essential scenarios, including:
 
 - Landing page verification
 - Specific product page testing

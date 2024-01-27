@@ -30,9 +30,8 @@ exports.loginPage = class loginPage {
   }
 
   async acceptCookies() {
-    const popupAcceptButton = this.popup_accept_button;
-    await expect(popupAcceptButton).toBeVisible()
-    await popupAcceptButton.click()
+    await expect(this.popup_accept_button).toBeVisible()
+    await this.popup_accept_button.click()
   }
 
   async pageTitleIsCorrect(){

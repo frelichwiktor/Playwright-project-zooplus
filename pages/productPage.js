@@ -10,6 +10,7 @@ exports.productPage = class productPage {
     this.quantityIncrease_button = page.locator('[data-zta="quantityStepperIncrementButton"]')
     this.ingredients_button = page.locator('[data-zta="productAnchorsIngredients"]')
     this.productFeedingRecommendations_button = page.locator('[data-zta="productAnchorsFeedingRecommendation"]')
+    this.cartButton = page.locator('[data-testid="MiniCartLink"]')
     this.productName_text = page.locator('[data-zta="productTitle"]')
     this.productSummary_text = page.locator('[data-zta="productCardSummary"]')
     this.ratingStars_text = page.locator('[data-zta="productRatingTeaser"]')

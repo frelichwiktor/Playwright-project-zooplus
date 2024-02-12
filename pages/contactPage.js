@@ -6,9 +6,11 @@ exports.contactPage = class contactPage {
     this.popup_accept_button = page.locator('#onetrust-accept-btn-handler');
     this.portallogo_image = page.locator('[class="portal-logo"]');
     this.header_text = page.locator('[class="hc-search-c"]');
-    this.support_input = page.locator('#support-serach-input');
-    this.submit_button = page.locator('[class="submit"]');
-    this.card_section = page.locator('[class="card"]');
+    this.search_field_input = page.locator('#support-search-input');
+    this.search_field_button = page.locator('[class="hc-search-button"]');
+    this.card_section = page.locator(
+      '[class="card card--shadow card--animated center articleSection"]',
+    );
     this.card_header = page.locator('[class="articleSection__header"]');
     this.articleContent_section = page.locator(
       '[class="articleSection__content"]',
@@ -17,7 +19,7 @@ exports.contactPage = class contactPage {
     this.link_section = page.locator('[class="link-list"]');
   }
 
-async goToPage() {
+  async goToPage() {
     await this.page.goto('https://support.zooplus.pl/pl/support/home');
   }
 
@@ -30,7 +32,24 @@ async goToPage() {
     await expect(this.page).toHaveTitle(text);
   }
 
-  async brandLogoImageIsVisible(){
+  async brandLogoImageIsVisible() {
     await expect(this.portallogo_image).toBeVisible();
   }
-}
+
+  async headerTextIsCorrect(text) {
+    await expect(this.header_text).toContainText(text);
+  }
+
+  async supportInputAreWorking(text) {
+    await this.search_field_input.fill(text);
+    await this.search_field_button.click();
+    await expect(
+      this.page.locator('[class="search-results-list"]'),
+    ).toBeVisible();
+  }
+
+  async cardSectionIsVisible(text) {
+    await expect(this.card_section.first()).toBeVisible();
+    await expect(this.card_section.first()).toContainText(text);
+  }
+};

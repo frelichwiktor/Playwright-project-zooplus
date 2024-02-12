@@ -65,8 +65,8 @@ exports.loginPage = class loginPage {
     await this.popup_accept_button.click();
   }
 
-  async pageTitleIsCorrect() {
-    await expect(this.page).toHaveTitle('Zaloguj się do zooplus');
+  async pageTitleIsCorrect(text) {
+    await expect(this.page).toHaveTitle(text);
   }
 
   async pageHeaderTextIsCorrect() {

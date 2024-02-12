@@ -12,7 +12,7 @@ test.beforeEach(
 
 test('Page title is correct', async ({ page }) => {
   const Login = new loginPage(page);
-  await Login.pageTitleIsCorrect();
+  await Login.pageTitleIsCorrect('Zaloguj się do zooplus');
 });
 
 test('Login page header text is correct', async ({ page }) => {

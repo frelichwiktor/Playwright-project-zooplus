@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { text } from 'stream/consumers';
 
 exports.landingPage = class landingPage {
   constructor(page) {
@@ -48,10 +49,8 @@ exports.landingPage = class landingPage {
     await this.popup_accept_button.click();
   }
 
-  async pageTitleIsCorrect() {
-    await expect(this.page).toHaveTitle(
-      'Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus',
-    );
+  async pageTitleIsCorrect(text) {
+    await expect(this.page).toHaveTitle(text);
   }
 
   async brandLogoImageIsVisible() {

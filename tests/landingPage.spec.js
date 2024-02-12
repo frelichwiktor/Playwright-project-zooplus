@@ -12,7 +12,9 @@ test.beforeEach(
 
 test('Page title is correct', async ({ page }) => {
   const Landing = new landingPage(page);
-  await Landing.pageTitleIsCorrect();
+  await Landing.pageTitleIsCorrect(
+    'Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus',
+  );
 });
 
 test('Brand logo image is visible', async ({ page }) => {

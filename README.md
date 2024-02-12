@@ -18,7 +18,7 @@ Navigate to a specific product page.
 Validate product details, pricing, and availability.
 Add the product to the cart and verify the cart content.
 ## 3. Contact Page
-Verify the presence of elements on the Zooplus Contact Page
+Verify the presence of elements on the Zooplus Contact Page.
 Ensure the sections at page are working.
 ## 4. User Login Functionality
 Navigate to the login page.

@@ -17,9 +17,12 @@ Ensure the navigation links are functional.
 Navigate to a specific product page.
 Validate product details, pricing, and availability.
 Add the product to the cart and verify the cart content.
-## 3. User Login Functionality
+## 3. Contact Page
+Verify the presence of elements on the Zooplus Contact Page
+Ensure the sections at page are working.
+## 4. User Login Functionality
 Navigate to the login page.
 Input valid credentials and verify successful login.
 Test the "Forgot Password" functionality.
-## 4. End-to-End Shopping Process
+## 5. End-to-End Shopping Process
 Perform a complete end-to-end shopping process, from product selection to order placement.

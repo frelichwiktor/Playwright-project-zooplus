@@ -48,8 +48,27 @@ exports.contactPage = class contactPage {
     ).toBeVisible();
   }
 
-  async cardSectionIsVisible(text) {
+  async articleSectionIsVisible() {
     await expect(this.card_section.first()).toBeVisible();
-    await expect(this.card_section.first()).toContainText(text);
+  }
+
+  async articleHeaderIsCorrect(text) {
+    await expect(this.card_header.first()).toBeVisible();
+    await expect(this.card_header.first()).toHaveText(text);
+  }
+
+  async footerSectionIsVisible() {
+    await expect(this.footer_section).toBeVisible();
+  }
+
+  async linkSectionIsVisible() {
+    await expect(this.link_section).toBeVisible();
+  }
+
+  async articleContainsCorrectContent(text) {
+    await this.card_header.first().click()
+    await expect(
+        this.page.locator('[class="breadcrumb-item active"]'),
+      ).toHaveText(text);
   }
 };

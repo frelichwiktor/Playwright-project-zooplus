@@ -30,7 +30,27 @@ test('Search input is working and the articles are shown', async ({ page }) => {
   await Contact.supportInputAreWorking('Zamówienia');
 });
 
-test('Card section is visible', async ({ page }) => {
+test('Article section is visible', async ({ page }) => {
   const Contact = new contactPage(page);
-  await Contact.cardSectionIsVisible('Zamówienia');
+  await Contact.articleSectionIsVisible();
 });
+
+test('Article header is correct', async ({ page }) => {
+  const Contact = new contactPage(page);
+  await Contact.articleHeaderIsCorrect('Zamówienia');
+});
+
+test('Footer section is visible', async ({ page }) => {
+    const Contact = new contactPage(page);
+    await Contact.footerSectionIsVisible();
+  });
+
+  test('Link section is visible', async ({ page }) => {
+    const Contact = new contactPage(page);
+    await Contact.linkSectionIsVisible();
+  });
+
+  test('Article contains correct content', async ({ page }) => {
+    const Contact = new contactPage(page);
+    await Contact.articleContainsCorrectContent('Zamówienia');
+  });

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { loginPage } from '../pages/loginPage.js';
-import { productPage } from '../pages/productPage.js';
+import { loginPage } from '../pages/login.page.js';
+import { productPage } from '../pages/product.page.js';
 
 test.beforeEach(
   'Setup - entering a page and accepting a cookies before every test',

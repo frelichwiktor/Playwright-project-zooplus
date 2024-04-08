@@ -66,9 +66,9 @@ exports.contactPage = class contactPage {
   }
 
   async articleContainsCorrectContent(text) {
-    await this.card_header.first().click()
+    await this.card_header.first().click();
     await expect(
-        this.page.locator('[class="breadcrumb-item active"]'),
-      ).toHaveText(text);
+      this.page.locator('[class="breadcrumb-item active"]'),
+    ).toHaveText(text);
   }
 };

@@ -1,79 +1,75 @@
 import { test, expect } from '@playwright/test';
 import { landingPage } from '../pages/landing.page.js';
 
-test.beforeEach(
-  'Setup - entering a page and accepting a cookies before every test',
-  async ({ page }) => {
-    const Landing = new landingPage(page);
-    await Landing.goToPage();
-    await Landing.acceptCookies();
-  },
-);
-
-test('Page title is correct', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.pageTitleIsCorrect(
-    'Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus',
+test.describe('Landing page details', () => {
+  test.beforeEach(
+    'Setup - entering a page and accepting a cookies before every test',
+    async ({ page }) => {
+      const Landing = new landingPage(page);
+      await Landing.goToPage();
+      await Landing.acceptCookies();
+    },
   );
-});
 
-test('Brand logo image is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.brandLogoImageIsVisible();
-});
+  test('Page title is correct', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.pageTitleIsCorrect(
+      'Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus',
+    );
+  });
 
-test('Background images are visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.backgroundImagesAreVisible();
-});
+  test('Brand logo image is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.brandLogoImageIsVisible();
+  });
 
-test('Header module is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.headerModuleIsVisible();
-});
+  test('Background images are visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.backgroundImagesAreVisible();
+  });
 
-test('Sale section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.saleSectionIsVisible();
-});
+  test('Header module is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.headerModuleIsVisible();
+  });
 
-test('Sidebanner section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.sidebannerSectionIsVisible();
-});
+  test('Sale section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.saleSectionIsVisible();
+  });
 
-test('Newsletter section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.newsletterSectionIsVisible();
-});
+  test('Sidebanner section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.sidebannerSectionIsVisible();
+  });
 
-test('Info list section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.infolistSectionIsVisible();
-});
+  test('Newsletter section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.newsletterSectionIsVisible();
+  });
 
-test('Social and app section section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.socialAndAppSectionIsVisible();
-});
+  test('Info list section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.infolistSectionIsVisible();
+  });
 
-test('Purchase details section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.purchaseDetailsSectionIsVisible();
-});
+  test('Social and app section section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.socialAndAppSectionIsVisible();
+  });
 
-test('Legal link section is visible', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.legalLinkSectionIsVisible();
-});
+  test('Purchase details section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.purchaseDetailsSectionIsVisible();
+  });
 
-test('Searchbox is working', async ({ page }) => {
-  const Landing = new landingPage(page);
-  await Landing.searchboxFill('Purizon');
-});
+  test('Legal link section is visible', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.legalLinkSectionIsVisible();
+  });
 
-// test('test', async ({page}) =>{
-//     const Landing = new landingPage(page)
-//     await Landing.goto()
-//     await page.pause()
-// })
+  test('Searchbox is working', async ({ page }) => {
+    const Landing = new landingPage(page);
+    await Landing.searchboxFill('Purizon');
+  });
+});

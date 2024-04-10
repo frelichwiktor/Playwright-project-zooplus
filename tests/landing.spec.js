@@ -6,7 +6,7 @@ test.describe('Landing page details', () => {
     'Setup - entering a page and accepting a cookies before every test',
     async ({ page }) => {
       const Landing = new landingPage(page);
-      await Landing.goToPage();
+      await page.goto('/');
       await Landing.acceptCookies();
     },
   );

@@ -40,10 +40,6 @@ exports.landingPage = class landingPage {
     );
   }
 
-  async goToPage() {
-    await this.page.goto('https://www.zooplus.pl/');
-  }
-
   async acceptCookies() {
     await expect(this.popup_accept_button).toBeVisible();
     await this.popup_accept_button.click();

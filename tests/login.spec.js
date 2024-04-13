@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { loginPage } from '../pages/login.page.js';
+import { loginData, userID } from '../test-data/login.data';
 
 test.describe('Login', () => {
   test.beforeEach(
@@ -28,16 +29,16 @@ test.describe('Login', () => {
 
   test('Login with incorrect data', async ({ page }) => {
     const Login = new loginPage(page);
-    await Login.invalidDataLogin('login@test.com', 'test123!');
+    const invalidLogin = 'invalid@test.com';
+    const invalidPassword = 'test123!';
+    await Login.invalidDataLogin(invalidLogin, invalidPassword);
   });
-
-  //correct login:
-  //test.wiktor.email@gmail.com
-  //Qwerty123!
 
   test('Login with correct data', async ({ page }) => {
     const Login = new loginPage(page);
-    await Login.validDataLogin('test.wiktor.email@gmail.com', 'Qwerty123!');
+    const userID = loginData.userId;
+    const password = loginData.userPassword;
+    await Login.validDataLogin(userId, userPassword);
   });
 
   test('Register form is visible', async ({ page }) => {

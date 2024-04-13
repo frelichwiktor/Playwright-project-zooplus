@@ -6,4 +6,5 @@ node_modules/
 /tests-examples
 /.prettierrc.json
 /.eslintrc.json
+/test-data
 .idea

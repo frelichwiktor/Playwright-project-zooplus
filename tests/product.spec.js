@@ -13,27 +13,31 @@ test.describe('Product page details', () => {
 
   test('Product name is correct', async ({ page }) => {
     const Product = new productPage(page);
-    await Product.productNameIsCorrect('Purizon Adult, 6 x 200 g, bez zbóż');
+    const productName = 'Purizon Adult, 6 x 200 g, bez zbóż';
+    await Product.productNameIsCorrect(productName);
   });
 
   test('Product summary have text', async ({ page }) => {
     const Product = new productPage(page);
-    await Product.productSummaryHaveText('Czysta przyjemność');
+    const productSummary = 'Czysta przyjemność';
+    await Product.productSummaryHaveText(productSummary);
   });
 
   test('Specific product ingredients are visible after clicking the ingredients button', async ({
     page,
   }) => {
     const Product = new productPage(page);
-    await Product.specificProductIngredientsAreVisible('Filet z kurczaka');
+    const productIngredient = 'Filet z kurczaka';
+    await Product.specificProductIngredientsAreVisible(productIngredient);
   });
 
   test('Specific feeding recommendations are visible after clicking the ingredients button', async ({
     page,
   }) => {
     const Product = new productPage(page);
+    const productFeedingRecommendation = 'Zalecenia żywieniowe';
     await Product.productFeedingRecommendationsAreVisible(
-      'Zalecenia żywieniowe',
+      productFeedingRecommendation,
     );
   });
 

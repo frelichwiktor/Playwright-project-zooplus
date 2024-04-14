@@ -13,7 +13,8 @@ test.describe('Contact page details', () => {
 
   test('Page title is correct', async ({ page }) => {
     const Contact = new contactPage(page);
-    await Contact.pageTitleIsCorrect('Pomoc techniczna : zooplus.pl');
+    const pageTitle = 'Pomoc techniczna : zooplus.pl';
+    await Contact.pageTitleIsCorrect(pageTitle);
   });
 
   test('Brand logo image is visible', async ({ page }) => {
@@ -23,14 +24,16 @@ test.describe('Contact page details', () => {
 
   test('Header text is correct', async ({ page }) => {
     const Contact = new contactPage(page);
-    await Contact.headerTextIsCorrect('Jak możemy Ci pomóc?');
+    const headerText = 'Jak możemy Ci pomóc?';
+    await Contact.headerTextIsCorrect(headerText);
   });
 
   test('Search input is working and the articles are shown', async ({
     page,
   }) => {
     const Contact = new contactPage(page);
-    await Contact.supportInputAreWorking('Zamówienia');
+    const supportInputText = 'Zamówienia';
+    await Contact.supportInputAreWorking(supportInputText);
   });
 
   test('Article section is visible', async ({ page }) => {
@@ -40,7 +43,8 @@ test.describe('Contact page details', () => {
 
   test('Article header is correct', async ({ page }) => {
     const Contact = new contactPage(page);
-    await Contact.articleHeaderIsCorrect('Zamówienia');
+    const articleHeader = 'Zamówienia';
+    await Contact.articleHeaderIsCorrect(articleHeader);
   });
 
   test('Footer section is visible', async ({ page }) => {
@@ -55,6 +59,7 @@ test.describe('Contact page details', () => {
 
   test('Article contains correct content', async ({ page }) => {
     const Contact = new contactPage(page);
-    await Contact.articleContainsCorrectContent('Zamówienia');
+    const articleConent = 'Zamówienia';
+    await Contact.articleContainsCorrectContent(articleConent);
   });
 });

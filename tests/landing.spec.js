@@ -13,14 +13,14 @@ test.describe('Landing page details', () => {
 
   test('Page title is correct', async ({ page }) => {
     const Landing = new landingPage(page);
-    await Landing.pageTitleIsCorrect(
-      'Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus',
-    );
+    const pageTitle =
+      'Internetowy sklep zoologiczny: karma i akcesoria dla zwierząt w zooplus';
+    await Landing.pageTitleIsCorrect(pageTitle);
   });
 
   test('Brand logo image is visible', async ({ page }) => {
     const Landing = new landingPage(page);
-    await Landing.brandLogoImageIsVisible();
+    await Landing.brandLogoIsVisible();
   });
 
   test('Background images are visible', async ({ page }) => {
@@ -70,6 +70,7 @@ test.describe('Landing page details', () => {
 
   test('Searchbox is working', async ({ page }) => {
     const Landing = new landingPage(page);
-    await Landing.searchboxFill('Purizon');
+    const searchboxFillText = 'Purizon';
+    await Landing.searchboxFill(searchboxFillText);
   });
 });

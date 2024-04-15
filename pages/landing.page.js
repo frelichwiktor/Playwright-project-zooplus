@@ -49,7 +49,7 @@ exports.landingPage = class landingPage {
     await expect(this.page).toHaveTitle(text);
   }
 
-  async brandLogoImageIsVisible() {
+  async brandLogoIsVisible() {
     await expect(this.brandlogo_image).toBeVisible;
   }
 

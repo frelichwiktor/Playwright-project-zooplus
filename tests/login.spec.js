@@ -4,7 +4,7 @@ import { loginData, userID } from '../test-data/login.data';
 
 test.describe('Login', () => {
   test.beforeEach(
-    'Setup - entering a page and accepting a cookies before every test',
+    'Setup - entering a page and accepting a cookies',
     async ({ page }) => {
       const Login = new loginPage(page);
       await Login.goToPage();
@@ -14,10 +14,11 @@ test.describe('Login', () => {
 
   test('Page title is correct', async ({ page }) => {
     const Login = new loginPage(page);
-    await Login.pageTitleIsCorrect('Zaloguj się do zooplus');
+    const pageTitle = 'Zaloguj się do zooplus';
+    await Login.pageTitleIsCorrect(pageTitle);
   });
 
-  test('Login page header text is correct', async ({ page }) => {
+  test('Page header text is correct', async ({ page }) => {
     const Login = new loginPage(page);
     await Login.pageHeaderTextIsCorrect();
   });
@@ -27,13 +28,6 @@ test.describe('Login', () => {
     await Login.loginFormIsCorrect();
   });
 
-  test('Login with incorrect data', async ({ page }) => {
-    const Login = new loginPage(page);
-    const invalidLogin = 'invalid@test.com';
-    const invalidPassword = 'test123!';
-    await Login.invalidDataLogin(invalidLogin, invalidPassword);
-  });
-
   test('Login with correct data', async ({ page }) => {
     const Login = new loginPage(page);
     const userID = loginData.userId;
@@ -41,12 +35,18 @@ test.describe('Login', () => {
     await Login.validDataLogin(userId, userPassword);
   });
 
+  test('Login with incorrect data', async ({ page }) => {
+    const Login = new loginPage(page);
+    const invalidLogin = 'invalid@test.com';
+    const invalidPassword = 'test123!';
+    await Login.invalidDataLogin(invalidLogin, invalidPassword);
+  });
+
   test('Register form is visible', async ({ page }) => {
     const Login = new loginPage(page);
     await Login.switchToRegisterForm();
   });
 
-  //with every single test u have to change an email
   test('Register a new customer', async ({ page }) => {
     const Login = new loginPage(page);
     await Login.switchToRegisterForm();
